@@ -1,0 +1,189 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 20px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 1000px; /* Puedes ajustar esto */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0056b3;
+}
+
+.game-area {
+    display: flex;
+    justify-content: space-between; /* Mantiene las dos columnas principales separadas */
+    gap: 20px; 
+}
+
+/* NUEVOS ESTILOS PARA LA COLUMNA IZQUIERDA */
+.left-column {
+    width: 25%; /* Ancho para toda la columna izquierda */
+    display: flex;
+    flex-direction: column; /* Apila las guías y el scoreboard verticalmente */
+    gap: 20px; /* Espacio entre el bloque de guías y el scoreboard */
+}
+
+/* ESTILOS AJUSTADOS PARA .guide-images */
+.guide-images {
+    /* width: 25%; Ya no es necesario aquí, .left-column maneja el ancho */
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.guide-images img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.guide-images p {
+    margin-top: 0;
+    font-weight: bold;
+}
+
+.game-play {
+    width: 70%; /* Ancho para el área de juego, ajusta si es necesario con el nuevo gap */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player-area, .machine-area {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+#webcam-container {
+    width: 250px; 
+    height: 250px; 
+    background-color: #333; 
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    margin: 0 auto 10px auto; 
+    overflow: hidden; 
+}
+
+#webcam-container canvas {
+    display: block; 
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.machine-choice-display img {
+    width: 200px; 
+    height: 200px; 
+    object-fit: contain;
+    border: 2px solid #28a745;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #e9ecef;
+}
+
+.choice-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #0056b3;
+    min-height: 1.5em; 
+}
+
+.scoreboard {
+    text-align: center;
+    /* margin: 15px 0;  El gap en .left-column maneja el espaciado vertical */
+    padding: 10px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    background-color: #e7f3ff;
+    width: 100%; /* Para que ocupe el ancho de .left-column */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
+.scoreboard h2 {
+    margin-top: 0;
+    color: #0056b3;
+    font-size: 1.3em;
+}
+
+.scoreboard p {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.controls-result {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#play-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#play-button:hover {
+    background-color: #218838;
+}
+
+.result-text {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 15px;
+    min-height: 1.8em; 
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    font-size: 0.9em;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .game-area {
+        flex-direction: column;
+        align-items: center;
+    }
+    .left-column, .game-play { /* Aplicar a la nueva columna */
+        width: 95%;
+        margin-bottom: 20px;
+    }
+    #webcam-container {
+        width: 200px;
+        height: 200px;
+    }
+    .machine-choice-display img {
+        width: 150px;
+        height: 150px;
+    }
+}

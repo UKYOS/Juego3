@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Papel o Tijera - IA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Piedra, Papel o Tijera ¡vs La Máquina!</h1>
+        </header>
+
+        <main class="game-area">
+            <div class="left-column">
+                <aside class="guide-images">
+                    <h2>Guía de Señas</h2>
+                    <div>
+                        <img src="imagenes/piedra_guia.jpg" alt="Guía Piedra">
+                        <p>Piedra</p>
+                    </div>
+                    <div>
+                        <img src="imagenes/papel_guia.jpg" alt="Guía Papel">
+                        <p>Papel</p>
+                    </div>
+                    <div>
+                        <img src="imagenes/tijera_guia.jpg" alt="Guía Tijera">
+                        <p>Tijera</p>
+                    </div>
+                </aside> 
+
+                <div class="scoreboard">
+                    <h2>Puntuación</h2>
+                    <p>
+                        Tú: <span id="player-score">0</span> &nbsp;|&nbsp; 
+                        Máquina: <span id="machine-score">0</span> &nbsp;|&nbsp; 
+                        Empates: <span id="ties-score">0</span>
+                    </p>
+                </div> 
+            </div> 
+
+            <section class="game-play">
+                <div class="player-area">
+                    <h2>Tú</h2>
+                    <div id="webcam-container">
+                        </div>
+                    <div id="player-choice-text" class="choice-text">Muestra tu mano...</div>
+                </div>
+
+                <div class="machine-area">
+                    <h2>Máquina</h2>
+                    <div class="machine-choice-display">
+                        <img id="machine-choice-image" src="imagenes/placeholder_cpu.png" alt="Elección de la máquina">
+                    </div>
+                    <div id="machine-choice-text" class="choice-text">Esperando...</div>
+                </div>
+
+                <div class="controls-result">
+                    <button id="play-button" onclick="jugarRonda()">¡Jugar!</button>
+                    <div id="result-text" class="result-text">¡Comienza el juego!</div>
+                </div>
+            </section> 
+        </main> 
+
+        <footer>
+            <p><strong>Acerca del Modelo:</strong> Este modelo fue entrenado con Teachable Machine
+                 para reconocer las señas de Piedra, Papel y Tijera. Utiliza TensorFlow.js para 
+                 funcionar en tu navegador. </p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
